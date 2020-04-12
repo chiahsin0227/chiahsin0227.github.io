@@ -2,19 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Chiahsin</title>
-    <link>https://example.com/categories/</link>
+    <link>https://chiahsin0227.github.io/categories/</link>
     <description>Recent content in Categories on Chiahsin</description>
     <generator>Hugo -- gohugo.io</generator>
     
-        <atom:link href="https://example.com/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://chiahsin0227.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to Use Lex</title>
-      <link>https://example.com/2020/04/how-to-use-lex/</link>
+      <link>https://chiahsin0227.github.io/2020/04/how-to-use-lex/</link>
       <pubDate>Sun, 12 Apr 2020 22:34:51 +0800</pubDate>
       
-      <guid>https://example.com/2020/04/how-to-use-lex/</guid>
+      <guid>https://chiahsin0227.github.io/2020/04/how-to-use-lex/</guid>
       <description>Draft </description>
     </item>
     
