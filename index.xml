@@ -5,18 +5,18 @@
     <link>https://chiahsin0227.github.io/</link>
     <description>Recent content on Chiahsin</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Sun, 12 Apr 2020 22:34:51 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2020 10:30:00 +0800</lastBuildDate>
     
         <atom:link href="https://chiahsin0227.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>How to Use Lex</title>
-      <link>https://chiahsin0227.github.io/2020/04/how-to-use-lex/</link>
-      <pubDate>Sun, 12 Apr 2020 22:34:51 +0800</pubDate>
+      <title>Compiler (I) Lex Introduction</title>
+      <link>https://chiahsin0227.github.io/2020/04/lex-introduction/</link>
+      <pubDate>Wed, 15 Apr 2020 10:30:00 +0800</pubDate>
       
-      <guid>https://chiahsin0227.github.io/2020/04/how-to-use-lex/</guid>
-      <description>Draft </description>
+      <guid>https://chiahsin0227.github.io/2020/04/lex-introduction/</guid>
+      <description>Introduce what Lex is and how we can use Lex.</description>
     </item>
     
   </channel>

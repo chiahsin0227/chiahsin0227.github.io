@@ -4,21 +4,35 @@
   
   <url>
     <loc>https://chiahsin0227.github.io/</loc>
-    <lastmod>2020-04-12T22:34:51+08:00</lastmod>
+    <lastmod>2020-04-15T10:30:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
-    <loc>https://chiahsin0227.github.io/2020/04/how-to-use-lex/</loc>
-    <lastmod>2020-04-12T22:34:51+08:00</lastmod>
+    <loc>https://chiahsin0227.github.io/tags/compiler/</loc>
+    <lastmod>2020-04-15T10:30:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chiahsin0227.github.io/2020/04/lex-introduction/</loc>
+    <lastmod>2020-04-15T10:30:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
   
   <url>
     <loc>https://chiahsin0227.github.io/posts/</loc>
-    <lastmod>2020-04-12T22:34:51+08:00</lastmod>
+    <lastmod>2020-04-15T10:30:00+08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
+    <loc>https://chiahsin0227.github.io/tags/</loc>
+    <lastmod>2020-04-15T10:30:00+08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
@@ -31,12 +45,6 @@
   
   <url>
     <loc>https://chiahsin0227.github.io/series/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
-    <loc>https://chiahsin0227.github.io/tags/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

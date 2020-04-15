@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <title>
-        Chiahsin</title>
+        Compiler (I) Lex Introduction - Chiahsin
+      </title>
     <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -22,25 +23,32 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  
+  <meta name="description" content="Introduce what Lex is and how we can use Lex." />
   <meta name="generator" content="Hugo 0.69.0 with theme pure" />
-  <title>Chiahsin</title>
+  <title>Compiler (I) Lex Introduction - Chiahsin</title>
   
-  <link rel="alternate" type="application/rss+xml" href="https://chiahsin0227.github.io/index.xml" title="Chiahsin" />
   
   <link rel="stylesheet" href="https://chiahsin0227.github.io/css/style.min.7dc20efbc53647d41aa9ddea0c48e59300223d084e66ea0cbe7c30bd88903acc.css">
   
   <link rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/9.15.10/styles/github.min.css" async>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.4.2/tocbot.css" async>
-  <meta property="og:title" content="Chiahsin" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://chiahsin0227.github.io/" />
-<meta property="og:updated_time" content="2020-04-15T10:30:00+08:00" />
-<meta itemprop="name" content="Chiahsin">
-<meta itemprop="description" content=""><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Chiahsin"/>
-<meta name="twitter:description" content=""/>
+  <meta property="og:title" content="Compiler (I) Lex Introduction" />
+<meta property="og:description" content="Introduce what Lex is and how we can use Lex." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://chiahsin0227.github.io/2020/04/lex-introduction/" />
+<meta property="article:published_time" content="2020-04-15T10:30:00+08:00" />
+<meta property="article:modified_time" content="2020-04-15T10:30:00+08:00" />
+<meta itemprop="name" content="Compiler (I) Lex Introduction">
+<meta itemprop="description" content="Introduce what Lex is and how we can use Lex.">
+<meta itemprop="datePublished" content="2020-04-15T10:30:00&#43;08:00" />
+<meta itemprop="dateModified" content="2020-04-15T10:30:00&#43;08:00" />
+<meta itemprop="wordCount" content="391">
+
+
+
+<meta itemprop="keywords" content="compiler," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Compiler (I) Lex Introduction"/>
+<meta name="twitter:description" content="Introduce what Lex is and how we can use Lex."/>
 
   <!--[if lte IE 9]>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
@@ -192,20 +200,20 @@
 
     
     
+<aside class="sidebar sidebar-toc collapse" id="collapseToc" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    <h4 class="toc-title">Catalogue</h4>
+    <nav id="toc" class="js-toc toc">
 
-<main class="main" role="main">
-  
-  <div class="content article-list">
+    </nav>
+  </div>
+</aside>
+<main class="main" role="main"><div class="content">
+  <article id="-" class="article article-type-" itemscope
+    itemtype="http://schema.org/BlogPosting">
     
-    
-    
-    <article
-      class="article article-type-page"
-      itemscope
-      itemtype="http://schema.org/BlogPosting"
-    >
-      <div class="article-header">
-        <h1 itemprop="name">
+    <div class="article-header">
+      <h1 itemprop="name">
   <a
     class="article-title"
     href="/2020/04/lex-introduction/"
@@ -213,12 +221,11 @@
   >
 </h1>
 
-      </div>
-      <div class="article-entry text-muted" itemprop="description">Introduce what Lex is and how we can use Lex.</div>
-      <p class="article-meta">
+      <div class="article-meta">
+        
 <span class="article-date">
   <i class="icon icon-calendar-check"></i>&nbsp;
-<a href="https://chiahsin0227.github.io/2020/04/lex-introduction/" class="">
+<a href="https://chiahsin0227.github.io/2020/04/lex-introduction/" class="article-date">
   <time datetime="2020-04-15 10:30:00 &#43;0800 CST" itemprop="datePublished">2020-04-15</time>
 </a>
 </span>
@@ -228,20 +235,166 @@
     <a class="article-tag-link" href="/tags/compiler/"> compiler </a>
   </span>
 
-        <span class="post-comment"><i class="icon icon-comment"></i> &nbsp;<a href="/2020/04/lex-introduction/#comments" class="article-comment-link">Comments</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/04/lex-introduction/#comments"
+            class="article-comment-link">Comments</a></span>
 		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 391words</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2minutes </span>
-      </p>
-    </article></div>
-  
-<nav class="bar bar-footer clearfix" data-stick-bottom>
-  <div class="bar-inner">
-    <ul class="pager pull-left">
-    </ul>
-    <div class="total-article bar-right">
-      Page:1/1
+      </div>
     </div>
+    <div class="article-entry marked-body js-toc-content" itemprop="articleBody">
+      <p>In this post, I will introduce what Lex is and how we can use Lex.</p>
+<h2 id="compiler-structure">Compiler Structure</h2>
+<p><img src="https://i.imgur.com/z1WsT9i.png" alt=""></p>
+<h3 id="what-is-lex">What is Lex?</h3>
+<p>Lex is a computer program that generates lexical analyzers (&ldquo;scanners&rdquo; or &ldquo;lexers&rdquo;). Lex is commonly used with the yacc parser generator. Lex reads an input stream specifying the lexical analyzer and outputs source code implementing the lexer in the C programming language.</p>
+<h3 id="how-to-write-lex">How to write Lex?</h3>
+<p>The following is an example Lex file for the <strong>flex version</strong> of Lex. It recognizes strings of numbers (positive integers) in the input, and simply prints them out.</p>
+<pre><code class="language-cpp=">/* Definition Section (required) */
+
+%{
+    #include &lt;stdio.h&gt;
+    /* The Definition Section will be copied 
+       to the top of generated C program. 
+       Include header files, declare variables. */
+}%
+
+POS_INTEGAR   ([+]?[0-9]+)
+NEG_INTEGAR   ([-][0-9]+)
+INTEGAR       ([-+]?[0-9]+)
+
+/* Above is more elegant way to write regular xxpressions */
+
+%% /* Separate definition section from rules section */
+
+/* Rules Section (required) */
+/* The Rules Section is for writing regular
+   expression to recognize tokens. When pattern
+   is matched, then execute action. 
+[Regular expression rule] { The things you want to do; } */
+
+[0-9]+  { printf(&quot;Saw an integer: %s\n&quot;, yytext); }
+
+/* {POS_INTEGAR} { printf(&quot;Saw an integer: %s\n&quot;, yytext); } 
+   We can write like above to get the same result. */ 
+   
+.|\n  { /* Ingore and do nothing */ }
+
+// &quot;.&quot; is wild card character, represent any character expect line feed \n
+
+%% /* Separate rules section from C code section */
+
+/* C code section */
+/* The C Code Section will be copied to the
+   bottom of generated C program. */
+   
+int main(void)
+{
+    /* Call the lexer, then quit. */
+    yylex();
+    return 0;
+}
+
+</code></pre>
+<p>For the rules section:</p>
+<ul>
+<li>Always choose the <strong>longest</strong> matching pattern.</li>
+<li>If the length are the same, choose the <strong>first</strong> met rule.</li>
+</ul>
+<h3 id="lex-predefined-variables">Lex predefined variables</h3>
+<table>
+<thead>
+<tr>
+<th align="center">Name</th>
+<th align="center">Functions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">char* yytext</td>
+<td align="center">Pointer to matched string.</td>
+</tr>
+<tr>
+<td align="center">int yyleng</td>
+<td align="center">Length of matched string.</td>
+</tr>
+<tr>
+<td align="center">int yylex(void)</td>
+<td align="center">Function call to invoke lexer and return token.</td>
+</tr>
+<tr>
+<td align="center">int yywrap(void)</td>
+<td align="center">Return 1 if no more files to be read.</td>
+</tr>
+<tr>
+<td align="center">char* yymore(void)</td>
+<td align="center">Return the next token.</td>
+</tr>
+<tr>
+<td align="center">int yyless(int n)</td>
+<td align="center">Retain the first n characters in yytext and (sort of) return the rest back to the input stream.</td>
+</tr>
+<tr>
+<td align="center">FILE* yyin</td>
+<td align="center">Input stream pointer.</td>
+</tr>
+<tr>
+<td align="center">FILE* yyout</td>
+<td align="center">Output stream pointer.</td>
+</tr>
+<tr>
+<td align="center">ECHO</td>
+<td align="center">Print out the yytext.</td>
+</tr>
+<tr>
+<td align="center">BEGIN</td>
+<td align="center">Condition switch.</td>
+</tr>
+<tr>
+<td align="center">REJECT</td>
+<td align="center">Go to the next alternative rule.</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+    <div class="article-footer">
+<blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    <li class="post-copyright-link hidden-xs">
+      <strong>Permalink: </strong>
+      <a href="https://chiahsin0227.github.io/2020/04/lex-introduction/" title="Compiler (I) Lex Introduction" target="_blank" rel="external">https://chiahsin0227.github.io/2020/04/lex-introduction/</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>License：</strong><a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN</a>
+    </li>
+  </ul>
+</blockquote>
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="https://github.com/chiahsin0227" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="https://chiahsin0227.github.io/avatar.png" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="https://github.com/chiahsin0227" target="_blank"><span class="text-dark">Chia-Hsin Hsu</span><small class="ml-1x"></small></a></h3>
+        <div></div>
+      </div>
+    </figure>
   </div>
+</div>
+    </div>
+  </article>
+<section id="comments">
+</section>
+
+</div><nav class="bar bar-footer clearfix" data-stick-bottom>
+    <div class="bar-inner">
+        <div class="bar-right">
+        </div>
+    </div>
 </nav>
 
 </main><footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
@@ -318,6 +471,7 @@
         hasInnerContainers: true,
     });
 </script>
+
 
   </body>
 </html>
