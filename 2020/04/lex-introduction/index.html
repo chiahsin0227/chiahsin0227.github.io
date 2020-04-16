@@ -42,7 +42,7 @@
 <meta itemprop="description" content="Introduce what Lex is and how we can use Lex.">
 <meta itemprop="datePublished" content="2020-04-15T10:30:00&#43;08:00" />
 <meta itemprop="dateModified" content="2020-04-15T10:30:00&#43;08:00" />
-<meta itemprop="wordCount" content="391">
+<meta itemprop="wordCount" content="409">
 
 
 
@@ -237,7 +237,7 @@
 
         <span class="post-comment"><i class="icon icon-comment"></i>&nbsp;<a href="/2020/04/lex-introduction/#comments"
             class="article-comment-link">Comments</a></span>
-		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 391words</span>
+		<span class="post-wordcount hidden-xs" itemprop="wordCount">Word Count: 409words</span>
 		<span class="post-readcount hidden-xs" itemprop="timeRequired">Read Count: 2minutes </span>
       </div>
     </div>
@@ -355,6 +355,13 @@ int main(void)
 </tr>
 </tbody>
 </table>
+<h3 id="condition">Condition</h3>
+<p>// TODO</p>
+<h3 id="how-to-compile-lex-file">How to compile lex file</h3>
+<pre><code class="language-shell=">flex scanner.l 
+gcc -o scanner lex.yy.c -lfl
+./scanner &lt; &lt;input_C_file&gt;
+</code></pre>
 
     </div>
     <div class="article-footer">
